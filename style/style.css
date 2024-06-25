@@ -1,0 +1,382 @@
+
+/*navbar start*/
+.navbar .container{
+    height:5em;
+  }
+  @media (max-width: 990px) {
+  .navbar .container{
+    height:auto;
+  }
+  }
+  /*button start*/
+  .button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+  }
+  .button.reserve-button {
+    width: 40%;
+}
+.reserved {
+  background-color: #555; /* Darker background color for the reserved button */
+  color: #ccc; /* Lighter text color for better contrast */
+}
+
+
+  /*button end*/ 
+  /*front start*/
+  #front{
+    background-color: #000000a7;
+  }
+  #front .container-fluid{
+    margin-top: 5rem;
+  }
+  #front img{
+    padding-bottom: 2rem;
+  }
+  @media (max-width: 990px) {
+    #front .container-fluid{
+      margin-top: 10rem;
+    }
+  }
+  /*front end*/
+  /*home start*/
+  #home {
+    width: 100%;
+    /* height: 100vh; */ /* Removed fixed height */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+  }
+  #home::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+   
+    background-color:#102334a7;
+    z-index: -1;
+  }
+  #home .home-row{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:1.875rem;
+    text-align: center;
+    margin-top: 3.125rem;
+  }
+  .padding{
+    padding:120px 5%;
+  }
+  
+  
+  /*home end*/
+body {
+
+    margin: 0;
+    padding: 0;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+@media (max-width: 990px) {
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+}
+
+.search-form {
+    margin-top: 30px;
+    display: flex;
+}
+
+#search {
+    width: 400px;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+#tagSuggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(50px);
+    z-index: 1;
+}
+
+.suggestion {
+    padding: 8px;
+    cursor: pointer;
+}
+.book-container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.book-item {
+    flex: 0 0 calc(16.66% - 15px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(50px);
+    color: white;
+    padding: 5px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:22rem;
+    height:29rem;
+}
+
+.book-item img {
+    width:13rem;
+    height:15rem;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.book-item h6 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.book-item p {
+    font-size: 14px;
+}
+#bookModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Darken the background */
+    z-index: 1000;
+}
+
+/* Style for the modal content */
+.modal-content {
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(50px);
+    /* Background color for the modal content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    /* Set your desired max-width */
+    margin: 0 auto;
+    /* Center the modal content horizontally */
+}
+.modal-header{
+  background-color: rgb(90, 90, 255);
+}
+.modal-body{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.722);
+    backdrop-filter: blur(50px);
+}
+/* Style for the close button */
+.close {
+    color: #000;
+    /* Set a color that contrasts with your background */
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: 5px;
+}
+
+#genreChart {
+    height: 200px;
+    width: 200px;
+}
+
+
+
+@media (max-width: 768px) {
+    #search {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    .book-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .book-item {
+        flex: 0 0 calc(70% - 20px);
+        background: transparent;
+        color: white;
+        padding: 20px;
+        margin: 15px;
+    }
+}
+/*section 2 start*/
+#graph #myChart {
+  padding-bottom: 5rem;
+}
+
+#graph .chart-header img{
+  height:12rem;
+  width:13rem;
+  }
+  .chart-header {
+    background-color: rgb(59, 158, 158);
+    color: white;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+}
+.paddingC{
+  padding:120px 5%;
+}
+@media screen and (max-width: 550px) {
+  #graph #myChart {
+    margin-top:5rem;
+  }
+  #graph h1 {
+    font-size: 1.5rem; 
+}
+.chart-header{
+  margin-top: 2rem;
+}
+#graph p {
+    font-size: 0.8rem; 
+}
+#graph .chart-header img{
+  height:11rem;
+  width:12rem;
+  }
+  .paddingC{
+    padding:0px 0%;
+    margin-left: -20px;
+  }
+}
+
+#graph h1 {
+  font-size: 1.5rem; 
+}
+
+#graph p {
+  font-size: 0.8rem;
+}
+
+
+/*section 2 end*/
+/*section 3 start*/
+#table #example {
+  width: 100%; 
+}
+.paddingt{
+  padding:120px 5%;
+}
+#table h1 {
+  font-size: 1.5rem; 
+}
+
+#table p {
+  font-size: 0.8rem;
+}
+#table .table-header img{
+height:12rem;
+width:13rem;
+}
+@media screen and (max-width: 550px) {
+#table #example {
+      width: 20%; 
+  }
+  
+  .paddingt{
+    padding:0px 0%;
+    margin-left: -20px;
+  }
+  #table h1 {
+    font-size: 1.5rem; 
+  }
+  
+  #table p {
+    font-size: 0.8rem;
+  }
+  #table .table-header img{
+    height:11rem;
+    width:12rem;
+    }
+}
+/*section 3 end*/
+footer {
+  background-color: #b59b74;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-content i{
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
